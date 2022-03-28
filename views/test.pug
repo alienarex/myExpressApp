@@ -1,0 +1,58 @@
+extends layout
+//- https://pugjs.org/language/attributes.html
+block content
+
+    // Form using GET as method
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            h4#myModalLabel.modal-title
+              | Form with GET
+          // Modal Body
+          .modal-body
+            //#editForm.form(role='form' method='GET' action='https://www.google.com/')
+            form(role='form' method='GET' action='http://localhost:3000/test/process_get')
+              div.form-group
+                label(for='first_name') first name: 
+                input#first_name.form-control(type='text', placeholder='Resource' name='first_name')
+              div.form-group
+                label(for='last_name') Last name:
+                input#last_name.form-control(type='text', placeholder='Last name' name='last_name')
+              button.btn.btn-primary(type="submit", name="submit") Submit
+
+          // Form using POST as method
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            h4#myModalLabel.modal-title
+              | Form with POST
+          // Modal Body
+          .modal-body
+            //#editForm.form(role='form' method='POST' action='https://www.google.com/')
+            form(role='form' method='POST' action='http://localhost:3000/test/process_post')
+              div.form-group
+                label(for='first_name') first name: 
+                input#first_name.form-control(type='text', placeholder='Resource' name='first_name')
+              div.form-group
+                label(for='last_name') Last name:
+                input#last_name.form-control(type='text', placeholder='Last name' name='last_name')
+              button.btn.btn-primary(type="submit", name="submit") Submit
+
+
+
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            h4#myModalLabel.modal-title
+              | Form for uploading file 
+          // Modal Body
+          .modal-body
+            //#editForm.form(role='form' method='GET' action='https://www.google.com/')
+            form(role='form' method='GET' action='http://localhost:3000/test/process_get' enctype= "multipart/form-data")
+              div.form-group
+                label(for='file_upload') Upload file: 
+                input#file_upload.form-control(type='file', size="50" name='file')
+              button.btn.btn-primary(type="submit", name="submit") Submit
