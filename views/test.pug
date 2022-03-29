@@ -2,7 +2,7 @@ extends layout
 //- https://pugjs.org/language/attributes.html
 block content
 
-    // Form using GET as method
+    // Form using request GET
     .modal-dialog
         .modal-content
           // Modal Header
@@ -21,7 +21,7 @@ block content
                 input#last_name.form-control(type='text', placeholder='Last name' name='last_name')
               button.btn.btn-primary(type="submit", name="submit") Submit
 
-          // Form using POST as method
+          // Form using request POST 
     .modal-dialog
         .modal-content
           // Modal Header
@@ -51,8 +51,8 @@ block content
           // Modal Body
           .modal-body
             //#editForm.form(role='form' method='GET' action='https://www.google.com/')
-            form(role='form' method='GET' action='http://localhost:3000/test/process_get' enctype= "multipart/form-data")
+            form(role='form' method='POST' action='upload' enctype= "multipart/form-data")
               div.form-group
                 label(for='file_upload') Upload file: 
-                input#file_upload.form-control(type='file', size="50" name='file')
+                input#file_upload.form-control(type='file', size="50" name='file_upload')
               button.btn.btn-primary(type="submit", name="submit") Submit

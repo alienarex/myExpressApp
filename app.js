@@ -11,7 +11,7 @@ var connectLiveReload = require("connect-livereload"); // auto refresh
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-var testRouter = require("./routes/test"); // TODO remove test
+var testRouter = require("./routes/test"); // TODO remove/rename?
 
 liveReloadServer.server.once("connection", () => {
   // auto refresh
