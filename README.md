@@ -1,2 +1,3 @@
 # myExpressApp
-Node.js dev using npm express
+
+Node.js dev using the Express framework
