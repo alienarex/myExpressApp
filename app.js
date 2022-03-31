@@ -12,6 +12,7 @@ var connectLiveReload = require("connect-livereload"); // auto refresh
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var testRouter = require("./routes/test"); // TODO remove/rename?
+var aboutRouter = require("./routes/about");
 
 liveReloadServer.server.once("connection", () => {
   // auto refresh
@@ -33,6 +34,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/about", aboutRouter); // Must be set before index routing
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/test", testRouter); // TODO remove test
