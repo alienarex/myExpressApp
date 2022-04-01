@@ -12,9 +12,12 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
  * Render view. Adding page title
  */
 router.get("/", function (req, res, next) {
-  res.render("test", { title: "I rock!" });
+  res.render("test", { title: "I rock!", menu: "test" });
 });
 
+/**
+ * Get file from form and upload it to relative path ./uploads
+ */
 router.post("/upload", upload.single("file_upload"), function (req, res) {
   var file = "./uploads" + "/" + req.file.originalname;
   fs.readFile(req.file.path, function (err, data) {
