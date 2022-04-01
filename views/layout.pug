@@ -1,11 +1,21 @@
+//- https://pugjs.org/language/inheritance.html
 doctype html
 html
   head
     title= title
     script(src="https://code.jquery.com/jquery-1.9.1.min.js") 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src="/javascripts/main.js")
-
+    link(rel='stylesheet', href='./stylesheets/style.css')
+    script(src="./javascripts/main.js")
   body
-    block content
+block navbar
+  ul.nav.nav-pills
+    li.nav-item
+      a.nav-link(href='/' class=(menu === 'index' ? 'active' : '')) Home
+    li.nav-item
+      a.nav-link(href='/users' class=(menu === 'users' ? 'active' : '')) Users
+    li.nav-item
+      a.nav-link(href='/test' class=(menu === 'test' ? 'active' : '')) Test
+    li.nav-item
+      a.nav-link(href='/about' class=(menu === 'about' ? 'active' : '')) About
+block content
